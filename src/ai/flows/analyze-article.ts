@@ -42,7 +42,18 @@ const prompt = ai.definePrompt({
     }),
   },
   prompt: `You are an AI assistant tasked with analyzing the credibility of news articles.
-  Your analysis should consider factors such as the presence of sensationalized language, unsupported claims, the source's reputation, and factual inconsistencies.
+  Your analysis should consider factors such as:
+  1. The presence of sensationalized language
+  2. Unsupported claims
+  3. The source's reputation
+  4. Factual inconsistencies
+  5. Claims about future events (especially those beyond the model's training data cutoff)
+
+  Important: When analyzing articles about future events:
+  - If the article makes claims about events beyond the model's training data cutoff (2023), mark it as potentially unreliable
+  - Focus on analyzing the source's credibility and the presence of factual evidence
+  - Avoid making predictions about future events
+  - Highlight any claims that cannot be verified with historical data
 
   Analyze the following article and determine if it is credible or not. Provide a confidence score between 0 and 100.
   Explain your reasoning by highlighting specific indicators within the article that influenced your decision.

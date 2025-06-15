@@ -31,7 +31,7 @@ export default function Home() {
 
   const getBadgeVariant = () => {
     if (!analysisResult) return 'default';
-    return analysisResult.isCredible ? 'accent' : 'destructive';
+    return analysisResult.isCredible ? 'default' : 'destructive';
   };
 
   const getBadgeText = () => {
@@ -45,6 +45,13 @@ export default function Home() {
       <h1 className="text-3xl font-bold text-center mb-6 text-foreground">
         Factual AI - Fake News Detection
       </h1>
+
+      {/* Date Limitation Note */}
+      <div className="text-center mb-4 p-3 bg-muted rounded-lg">
+        <p className="text-sm text-muted-foreground">
+          Note: This model can analyze news articles up to October 2023. Articles about events beyond this date may be marked as potentially unreliable.
+        </p>
+      </div>
 
       {/* Content Submission Card */}
       <Card className="bg-card shadow-md rounded-lg">
