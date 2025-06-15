@@ -1,7 +1,8 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
+import type { Configuration } from 'webpack';
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -9,9 +10,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack: (config, { isServer }) => {
-    // Handle Handlebars
-    config.module.rules.push({
+  webpack: (config: Configuration, { isServer }: { isServer: boolean }) => {
+    // Add rule for Handlebars
+    config.module?.rules?.push({
       test: /\.js$/,
       include: /node_modules\/handlebars/,
       use: {
