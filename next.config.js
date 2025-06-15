@@ -20,9 +20,7 @@ const nextConfig = {
     });
     return config;
   },
-  // Enable static exports
-  output: 'export',
-  // Disable image optimization
+  // Remove static export
   images: {
     unoptimized: true
   }
